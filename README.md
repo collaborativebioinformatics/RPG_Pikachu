@@ -80,8 +80,6 @@ Please use the DNAnexus workflows to use this tool.
 
   annotated variants.txt
 
-### Appendix
-
 ## Statistical Visualization of Example data
 
 #### Input :
@@ -94,6 +92,7 @@ Example:<br/>
 Example:<br/>
 <img width="750" alt="examples......" src="https://github.com/collaborativebioinformatics/.png">
 
+## Appendix
 
 ## References 
 
