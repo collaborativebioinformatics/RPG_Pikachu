@@ -60,9 +60,9 @@ common variants
 
 Riboseq-validation
 
-```
+/*
 To download paired RNASeq.fastq and RiboSeq.fastq
-```
+*/
 
 ```
 To quality control fastq files (adapter trimming, remove low quality reads, etc.) 
