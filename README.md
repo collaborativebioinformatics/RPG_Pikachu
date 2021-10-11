@@ -1,4 +1,4 @@
-# telomere-to-telomere genome for annotating common alleles & abnormally avoided stop-codons
+# Telomere-to-telomere genome for annotating common alleles & abnormally avoided stop-codons
 
 ## Contributors 
 -  Elbay Aliyev - Lead 
