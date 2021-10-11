@@ -36,13 +36,13 @@ II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
-  -- Extract the coordinations of stop codons in CHM13 annotation file
+  - - Extract the coordinations of stop codons in CHM13 annotation file
 
   ```
   grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
   ```
 
-  - Convert the GFF format to BED format
+  - - Convert the GFF format to BED format
 
   ```
   gffread --bed chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.bed
@@ -50,7 +50,7 @@ II. Core tasks:
 
 2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce, Tiancheng)
 
-  Variant call filtering criteria (SNP, AAF > 5%)
+  - - Variant call filtering criteria (SNP, AAF > 5%)
 
   ```
   bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf &
@@ -58,13 +58,13 @@ II. Core tasks:
 
 3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
 
-  Picking up common variants
+  - - Picking up common variants
 
   ```
   (#$%$#%$%)
   ```
 
-  Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
+  - - Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
 
   ```
   To download paired RNASeq.fastq and RiboSeq.fastq
