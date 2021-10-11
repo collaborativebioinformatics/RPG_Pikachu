@@ -3,7 +3,7 @@
 ## Contributors 
 -  Elbay Aliyev - Lead 
 -  Muhammad Sohail Raza - Writer
--  Shangzhe Zhang, Anastasia Illarionova, Prashant Ranjan, Tiancheng Xu, Aditi Sammi -　Tech support 
+-  Shangzhe Zhang, Anastasia Illarionova, Prashant Ranjan, Tiancheng Xu, Aditi Sammi - Tech support 
 -  Bryce Kille, ChunHsuan LO - SysAdmin
 
 ## Goal 
