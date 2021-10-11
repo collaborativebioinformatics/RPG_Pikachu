@@ -7,8 +7,8 @@
 -  Bryce Kille, ChunHsuan LO - SysAdmin
 
 ## Goal 
-- To identify rare variants that has stop-codons in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
-- To identify stop codons that disagree with Ribo-seq analysis for validting the annotation.
+- To identify false rare variants in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
+- To screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
 
 ## Introduction 
 
