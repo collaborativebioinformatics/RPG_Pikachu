@@ -60,20 +60,23 @@ common variants
 
 Riboseq-validation
 
-/*
+```
 To download paired RNASeq.fastq and RiboSeq.fastq
-*/
-
-```
-To quality control fastq files (adapter trimming, remove low quality reads, etc.) 
 ```
 
 ```
-To align the reads to CHM13 refgenome (get RNASeq.bam and RiboSeq.bam)
+To quality control fastq files 
+(adapter trimming, remove low quality reads, etc.) 
 ```
 
 ```
-To peak calling for read coverage of aligned bam files (This will reveal real ORF and stop-codon sites by comparing RNAseq & Riboseq at same time.)
+To align the reads to CHM13 refgenome 
+(get RNASeq.bam and RiboSeq.bam)
+```
+
+```
+To peak calling for read coverage of aligned bam files 
+(This will reveal real ORF and stop-codon sites by comparing RNAseq & Riboseq at same time.)
 ```
 
 ```
