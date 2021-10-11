@@ -7,25 +7,29 @@
 -  Bryce Kille, ChunHsuan LO - SysAdmin
 
 ## Goal 
-- Identify rare variants that has stop-codons in CHM13 and replacing with common variant? Checking the fasta file directly.
-- Identify stop codons that disagree with Ribo-seq analysis.
+- To identify rare variants that has stop-codons in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
+- To identify stop codons that disagree with Ribo-seq analysis for validting the annotation.
 
 ## Introduction 
 
 ## Input:
 
-- vcf files lifted up from hg38 to CHM13.
+- vcf files (using CHM13 as reference already).
 
 ## Outputs: 
 
-- Correctly annotated variants site.
+- Correctly annotated variants sites.
 
 ## Methods 
 
 I. Data Acquisition and Preprocessing:
 
-1. Download the row VCF (hg38 fasta based)
+1. Downloading the raw CHM13 fasta file.
 
+2. Downloading the raw population based VCF (CHM13 fasta based).
+
+3. Downloading the raw Annotation file (gff3).
+4. 
 II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
@@ -40,9 +44,11 @@ II. Core tasks:
 
 6. Biological significance of the replacement selection/disease-related candidates. 
 
+7. Statistical visualization.
+
 III. Outcome:
 
-1. Biologically annotated variants.
+1. Biologically annotated variants (CHM13 based).
 
 ## Installation 
 Please use the DNAnexus workflows to use this tool. 
@@ -54,13 +60,15 @@ Please use the DNAnexus workflows to use this tool.
 ## Required Data
 - VCF files (vcf) 
   
-- Reference sequence (fasta)
-
-  CHM13 Fasta file, Hg38 Fasta file
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
   
-- Annotated reference file (gff3)
+- Reference sequence (CHM13 fasta & Hg38 fasta)
+  
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/
+  
+- Gene annotation file (gff3, bed, others)
 
-  https://s3-us-west-2.amazonaws.com/human-pangenomi
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/annotation/
 
 - Example input: 
 
