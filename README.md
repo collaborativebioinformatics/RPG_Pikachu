@@ -36,10 +36,10 @@ II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
-  - Extract the coordinations of stop codons in CHM13 annotation file
+  -- Extract the coordinations of stop codons in CHM13 annotation file
 
   ```
-  -   grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
+  grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
   ```
 
   - Convert the GFF format to BED format
