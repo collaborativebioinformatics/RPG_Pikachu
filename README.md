@@ -36,6 +36,18 @@ II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
+Extract the coordinations of stop codons in CHM13 annotation file
+
+```sh
+grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
+```
+
+Convert the GFF format to BED format
+
+```
+gffread --bed chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.bed
+```
+
 2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce)
 
 3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
