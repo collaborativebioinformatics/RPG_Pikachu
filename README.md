@@ -31,7 +31,7 @@ I. Data Acquisition and Preprocessing:
 2. Downloading the raw population based VCF (CHM13 fasta based).
 
 3. Downloading the raw Annotation file (gff3).
-4. 
+
 II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
@@ -56,7 +56,7 @@ III. Outcome:
 Please use the DNAnexus workflows to use this tool. 
 
 ## Flowchart
-<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version1.png">
+<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version2.png">
 (for the working pipelines)
 
 ## Required Data
@@ -82,10 +82,18 @@ Please use the DNAnexus workflows to use this tool.
 
 ### Appendix
 
+## Statistical Visualization of Example data
+
 #### Input :
 
 Example:<br/>
-<img width="750" alt="PRS_value of each feature for the example person." src="https://github.com/collaborativebioinformatics/.png">
+<img width="750" alt="examples......" src="https://github.com/collaborativebioinformatics/.png">
+
+#### output :
+
+Example:<br/>
+<img width="750" alt="examples......" src="https://github.com/collaborativebioinformatics/.png">
+
 
 ## References 
 
