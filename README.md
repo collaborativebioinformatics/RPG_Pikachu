@@ -50,6 +50,12 @@ gffread --bed chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3 > chm13.draft_
 
 2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce, Tiancheng)
 
+Variant call filtering criteria (SNP, AAF > 5%)
+
+```
+bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf &
+```
+
 3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
 
 common variants
