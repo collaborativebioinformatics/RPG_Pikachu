@@ -134,20 +134,20 @@ Please use the DNAnexus workflows to use this tool.
 
 #### Input :
 
-Example:<br/>
+- Example:<br/>
 <img width="750" alt="examples......" src="https://github.com/collaborativebioinformatics/.png">
 
 #### output :
 
-chm13.gene_annotation.stop_codon:
+- chm13.gene_annotation.stop_codon:
 
-Bed file:
+  - Bed file:
 
-https://dl.dnanex.us/F/D/bG0bvZz8959FKJX0zZjVPyvYFV7KkZQ9zyxYKxP2/chm13.draft_v1.1.gene_annotation.v4.stop_codon.bed
+  https://dl.dnanex.us/F/D/bG0bvZz8959FKJX0zZjVPyvYFV7KkZQ9zyxYKxP2/chm13.draft_v1.1.gene_annotation.v4.stop_codon.bed
 
-Gff3 file:
+  - Gff3 file:
 
-https://dl.dnanex.us/F/D/4VYqGjkfj9pp2BV72pP75kXX6408x1501gKFbYFp/chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
+  https://dl.dnanex.us/F/D/4VYqGjkfj9pp2BV72pP75kXX6408x1501gKFbYFp/chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
 
 ## Appendix
 
