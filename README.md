@@ -106,7 +106,7 @@ III. Outcome:
 Please use the DNAnexus workflows to use this tool. 
 
 ## Flowchart
-<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version4.png">
+<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version5.png">
 (for the working pipelines)
 
 ## Required Data
