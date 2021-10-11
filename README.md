@@ -50,7 +50,13 @@ gffread --bed chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3 > chm13.draft_
 
 2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce)
 
-3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
+3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
+
+Riboseq-validation
+
+```
+Download paired RNASeq.fastq and RiboSeq.fastq => fastq qc (adapter trimming, remove low quality reads, etc.) => aligning to CHM13 (get RNASeq.bam and RiboSeq.bam) => peak calling for read coverage (which will reveal real ORF and stop-codon sites)
+```
 
 4. Annotate common variants with ClinVar (Anastasia, Shangzhe)
 
