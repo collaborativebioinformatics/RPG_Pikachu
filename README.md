@@ -86,7 +86,8 @@ II. Core tasks:
   ```
 
   ```
-  To validate our targeted variant sites by the peak calling results, and to clasify them into true ones and false ones.
+  To validate our targeted variant sites by the peak calling results, 
+  and to clasify them into true ones and false ones.
   ```
 
 4. Annotate common variants with ClinVar (Anastasia, Shangzhe)
