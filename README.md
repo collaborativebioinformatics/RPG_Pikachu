@@ -99,7 +99,7 @@ III. Outcome:
 Please use the DNAnexus workflows to use this tool. 
 
 ## Flowchart
-<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version3.png">
+<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version4.png">
 (for the working pipelines)
 
 ## Required Data
@@ -141,9 +141,6 @@ https://dl.dnanex.us/F/D/bG0bvZz8959FKJX0zZjVPyvYFV7KkZQ9zyxYKxP2/chm13.draft_v1
 Gff3 file:
 
 https://dl.dnanex.us/F/D/4VYqGjkfj9pp2BV72pP75kXX6408x1501gKFbYFp/chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
-
-Example:<br/>
-<img width="750" alt="examples......" src="https://github.com/collaborativebioinformatics/.png">
 
 ## Appendix
 
