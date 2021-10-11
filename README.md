@@ -38,7 +38,7 @@ II. Core tasks:
 
 Extract the coordinations of stop codons in CHM13 annotation file
 
-```sh
+```
 grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
 ```
 
