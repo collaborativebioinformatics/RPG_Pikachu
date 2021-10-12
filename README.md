@@ -9,12 +9,12 @@
 -  Bryce Kille, ChunHsuan LO - SysAdmin
 
 ## Goal 
-- To identify false rare variants in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
+- To identify false rare variants in CHM13 and recorrecting some of them as common variants.
 - To screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
 
 ## Introduction 
 
-After two decades of refinements, the human reference genome (GRCh38) has become more accurate and mostly complete. However, there are still hundreds of unresolved gaps persist, and no single chromosome has been finished from end to end because of the existence of highly repeated sequences (called transposable elements). Foutunatedly, by using the high-coverage & ultra-long-read technologies, several scientific groups have presented a new human genome assembly that surpasses the continuity of GRCh38, along with a gapless, telomere-to-telomere assembly of a human chromosome, which is called CHM13 reference genome. And for this brand new human reference genome, the precise annotation of variants and genes is required.
+After two decades of refinements, the human reference genome (GRCh38) has become more accurate and mostly complete. However, there are still hundreds of unresolved gaps persist, and no single chromosome has been finished from end to end because of the existence of highly repeated sequences (called transposable elements). Foutunatedly, by using the high-coverage & ultra-long-read technologies, several scientific groups have presented a new human genome assembly that surpasses the continuity of GRCh38, along with a gapless, telomere-to-telomere assembly of a human chromosome, which is called CHM13 reference genome. And for this brand new human reference genome, the precise annotation of variants and genes is still required. Especially, some of those common alleles over 1000-genomes project need to be corrected in the new CHM13 reference genome, which will ease the analysis of future NGS data massively. 
 
 ## Input:
 
@@ -35,6 +35,14 @@ I. Data Acquisition and Preprocessing:
 3. Downloading the raw Annotation file (gff3).
 
 II. Core tasks:
+
+(PART1) Generating New CHM13 reference genome.
+
+1. Create main script that will create updated CHM13 fasta file:
+  -  Input: Old CHM13 reference fasta, VCF file, GFF annotation, Optional (Clinvar)
+  -  Output: New reference CHM13 Fasta
+
+(PART2) Parsing common alleles into newly generated CHM13 reference genome
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
@@ -94,11 +102,9 @@ II. Core tasks:
 
 4. Annotate common variants with ClinVar (Anastasia, Shangzhe)
 
-5. Flowchart creation (Anastasia, Muhamad)
+5. Biological significance of the replacement selection/disease-related candidates. 
 
-6. Biological significance of the replacement selection/disease-related candidates. 
-
-7. Statistical visualization.
+6. Statistical visualization.
 
 III. Outcome:
 
