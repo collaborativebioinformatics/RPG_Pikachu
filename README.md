@@ -1,6 +1,6 @@
 # Telomere-to-telomere genome for annotating common alleles & abnormally avoided stop-codons
 
-<img align="right" width="120" height="200" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/pikachu2.jpeg">
+<img align="right" width="200" height="200" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/RPG_pikachu.jpeg>
 
 ## Contributors 
 -  Elbay Aliyev - Lead 
