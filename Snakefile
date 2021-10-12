@@ -3,32 +3,43 @@ import glob
 import os
 from snakemake.utils import min_version
 
+
+shell.prefix("set -o pipefail; umask 002; ")  # set g+w
+
+
+#Snakemake config
+min_version("5.5")
+configfile: "config.yaml"
+
+if not os.path.exists("filtered_vcf"):
+    os.makedirs("filtered_vcf")
+
 ##include rules (can be commented out)
 
 include: "rules/filter_vcf.smk"
 include: "rules/vcfconsensus.smk"
 include: "rules/find_stopcodons.smk"
 
-#Snakemake config
-min_version("5.5")
-configfile: "config.yaml"
 
 chr_list = list(range(1,23))+["X", "Y"]
-chr= ["chr" + str(i) for i in chr_list]
+chr_id= ["chr" + str(i) for i in chr_list]
 
 rule all:
     input:
-        expand("filtered_vcf/{chromosome}_filtered.vcf", chromosome = chr),
+        "all_chr_fixed_header.vcf",
+        expand("input_vcf/{chromosome}.vcf", chromosome = chr_id),
+        expand("filtered_vcf/{chromosome}_filtered.vcf", chromosome = chr_id),
         "filtered_vcf/common_annotated.vcf.gz",
-        "output/CHM13_new.fasta"
+        "output/CHM13_new.fasta",
+        "output/chm13.new.in-frame.stop-codon.bed"
 
 rule fix_header:
     input:
-        vcf = config["vcf"],
+        vcf = config["vcf"]
     output:
-        "filtered_vcf/all_chr_fixed_header.vcf"
-    container:
-        "docker://broadinstitute/gatk"
+        "all_chr_fixed_header.vcf"
+    conda:
+        "envs/utils.ymal"
     threads: 1
     resources:
         nodes = 1
@@ -39,21 +50,21 @@ rule fix_header:
           O={output}
         """
 
+
 rule split_by_chr:
     input:
-        vcf = 'filtered_vcf/all_chr_fixed_header.vcf',
+        vcf = "all_chr_fixed_header.vcf"
     output:
-        "filtered_vcf/{chromosome}.vcf"
+        "input_vcf/{chromosome}.vcf"
     params:
         chr = "{chromosome}"
-    container:
-        "docker://broadinstitute/gatk"
+    conda:
+        "envs/utils.ymal"
     threads: 1
     resources:
         nodes = 1
     shell:
         """
-        gatk CreateSequenceDictionary -R {config[ref_genome]}
         gatk SelectVariants \
           -R {config[ref_genome]} \
           -V {input.vcf} \
@@ -64,11 +75,11 @@ rule split_by_chr:
 
 rule mergevcf:
     input:
-        expand("filtered_vcf/{chromosome}_filtered.vcf.gz", chromosome=chr)
+        expand("filtered_vcf/{chromosome}_filtered.vcf.gz", chromosome=chr_id)
     output:
         "filtered_vcf/common.vcf.gz"
     conda:
-        "envs/utils.yaml"
+        "envs/utils.ymal"
     threads: 10
     resources:
         nodes = 1
@@ -79,19 +90,21 @@ rule mergevcf:
                  -O z \
                  -o {output} && tabix -p vcf {output}       
         """
+
 rule annotatevcf:
     input:
-        vcf = "filtered_vcf/common.vcf.gz"
-        vcf_clinvar = {config[vcf_clinvar]}
+        vcf = "filtered_vcf/common.vcf.gz",
+        vcf_clinvar = {config["vcf_clinvar"]}
     output:
         "filtered_vcf/common_annotated.vcf.gz"
-    container:
-        "docker://broadinstitute/gatk"
+    conda:
+        "envs/utils.ymal"
     threads: 10
     resources:
         nodes = 1
     shell:
         """
+        gatk CreateSequenceDictionary -R {config[ref_genome]}
         gatk VariantAnnotator \
           -R {config[ref_genome]} \
           -V {input.vcf} \

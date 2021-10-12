@@ -2,14 +2,14 @@
 import glob
 from pathlib import Path
 
-
+shell.prefix("set -o pipefail; umask 002; ")  # set g+w
 rule filter_vcf:
     input:
-        vcf = "final_vcfs/{chromosome}.vcf", 
-    params:
-        chr = "{chromosome}"
+        vcf = "input_vcf/{chromosome}.vcf"
     output:
         "filtered_vcf/{chromosome}_filtered.vcf"
+    conda:
+        "../envs/utils.ymal"
     shell:
         """
         bcftools view -i 'INFO/AF > 0.05' {input.vcf} > {input.vcf}_filteredAF.vcf
@@ -19,11 +19,11 @@ rule filter_vcf:
 
 rule filter_vcf_index:
     input:
-        vcf = "final_vcfs/{chromosome}_filtered.vcf", 
-    params:
-        chr = "{chromosome}"
+        vcf = "filtered_vcf/{chromosome}_filtered.vcf", 
     output:
         "filtered_vcf/{chromosome}_filtered.vcf.gz"
+    conda:
+        "../envs/utils.ymal"
     shell:
         """
         bgzip -c {input.vcf} > {output}

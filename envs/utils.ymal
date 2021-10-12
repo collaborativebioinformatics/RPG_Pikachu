@@ -1,9 +1,11 @@
-name: popchrom
+name: base
 channels:
   - bioconda
   - defaults
 dependencies:
-  - gffread=0.12.7
+  - gffread
   - samtools=1.13
   - vcftools=0.1.16
-  - bcftools=1.13
+  - perl-vcftools-vcf
+  - bcftools
+  - gatk4
