@@ -1,4 +1,0 @@
-ref_genome: data/hm13.draft_v1.0.fasta
-gff: data/chm13.draft_v1.0.gene_annotation.v4.gff3
-vcf: 1KG_CHM13.vcf
-vcf_clinvar: clinvar_liftover_tochm13_v0draft.vcf

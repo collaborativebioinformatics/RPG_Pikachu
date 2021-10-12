@@ -1,9 +1,0 @@
-name: popchrom
-channels:
-  - bioconda
-  - defaults
-dependencies:
-  - gffread=0.12.7
-  - samtools=1.13
-  - vcftools=0.1.16
-  - bcftools=1.13
