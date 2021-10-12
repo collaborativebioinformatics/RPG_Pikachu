@@ -146,9 +146,9 @@ snakemake --cores 10
   and to clasify them into true ones and false ones.
   ```
 
-### IIII. Annotate common variants with ClinVar (Anastasia)
+**4.** Annotate common variants with ClinVar (Anastasia)
 
-### IV. Results:
+### IIII. Results:
 
 **1.** Statistics of allele frequency
 
@@ -160,7 +160,9 @@ snakemake --cores 10
 
 **4.** Statistical visualization
 
-## References
+## IV. Appendix
+
+##References
 
 - Sergey Aganezov et.al, A complete reference genome improves analysis of human genetic variation. bioRxiv 2021.07.12.452063; doi: https://doi.org/10.1101/2021.07.12.452063
 - T2T Consortium: https://sites.google.com/ucsc.edu/t2tworkinggroup/technology?authuser=0
