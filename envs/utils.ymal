@@ -1,0 +1,11 @@
+name: base
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - gffread
+  - samtools=1.13
+  - vcftools=0.1.16
+  - perl-vcftools-vcf
+  - bcftools
+  - gatk4
