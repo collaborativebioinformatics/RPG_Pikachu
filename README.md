@@ -8,6 +8,10 @@
 -  Shangzhe Zhang, Anastasia Illarionova, Prashant Ranjan, Tiancheng Xu, Aditi Sammi - Tech support 
 -  Bryce Kille, ChunHsuan LO - SysAdmin
 
+## Introduction 
+
+After two decades of refinements, the human reference genome (GRCh38) has become more accurate and mostly complete. However, there are still hundreds of unresolved gaps persist, and no single chromosome has been finished from end to end because of the existence of highly repeated sequences (called transposable elements). Foutunatedly, by using the high-coverage & ultra-long-read technologies, several scientific groups have presented a new human genome assembly that surpasses the continuity of GRCh38, along with a gapless, telomere-to-telomere assembly of a human chromosome, which is called CHM13 reference genome.
+
 ## Goal 
 - To identify rare variants in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
 - To screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
@@ -19,23 +23,8 @@ by Anastasia Illarionova
 
 <img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version5.png">
 
-## Introduction 
 
-After two decades of refinements, the human reference genome (GRCh38) has become more accurate and mostly complete. However, there are still hundreds of unresolved gaps persist, and no single chromosome has been finished from end to end because of the existence of highly repeated sequences (called transposable elements). Foutunatedly, by using the high-coverage & ultra-long-read technologies, several scientific groups have presented a new human genome assembly that surpasses the continuity of GRCh38, along with a gapless, telomere-to-telomere assembly of a human chromosome, which is called CHM13 reference genome. 
-
-## Input:
-
-- vcf files (using CHM13_v1.0 as reference already)
-
-## Outputs: 
-
-- New reference Fasta file (for all samples in 1GP)
-- (Optional) New reference Fasta files for 5 subpopulations
-- ClinVar annotation of common alleles
-
-## Methods
-
-### Dependancies
+## Dependancies
 
 - python3
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
@@ -43,9 +32,29 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 - [gffread](https://github.com/gpertea/gffread)
 - [GATK](https://gatk.broadinstitute.org)
 
-### Sample Workflow (chr22)
+## Input:
 
-#### I. Data Acquisition and Preprocessing:
+- vcf files (using CHM13_v1.0 as reference already)
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
+- CHM13_v1.0 Fasta file
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/chm13.draft_v1.0.fasta.gz
+
+- CHM13_v1.0 GFF file
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz
+
+## Outputs: 
+
+- New reference Fasta file (for all samples in 1GP)
+- (Optional) New reference Fasta files for 5 subpopulations
+- ClinVar annotation of common alleles
+
+
+## Sample Workflow (chr22)
+
+### I. Data Acquisition and Preprocessing:
 
 1. Downloading the raw CHM13 fasta file.
 
@@ -53,7 +62,7 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 
 3. Downloading the raw Annotation file (gff3).
 
-#### II. Core tasks:
+### II. Core tasks:
 
 **1.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
@@ -111,11 +120,9 @@ After two decades of refinements, the human reference genome (GRCh38) has become
   and to clasify them into true ones and false ones.
   ```
 
-#### IIII. Annotate common variants with ClinVar (Anastasia)
+### IIII. Annotate common variants with ClinVar (Anastasia)
 
-
-
-#### IV. Results:
+### IV. Results:
 
 **1.** Statistics of allele frequency
 
@@ -126,30 +133,6 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 **3.** Biologically annotated variants (CHM13 based).
 
 **4.** Statistical visualization
-
-
-## Required Data
-- VCF files (vcf) 
-  
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
-  
-- Reference sequence (CHM13 fasta & Hg38 fasta)
-  
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/
-  
-- Gene annotation file (gff3, bed, others)
-
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/annotation/
-
-- Example input: 
-
-  Chr22.vcf - Variant called using CHM13 as reference
-  
-- Example output: 
-
-  annotated variants.txt
-
-
 
 ## References
 
