@@ -150,7 +150,7 @@ snakemake --cores 10
 
 **4.** Annotate common variants with ClinVar (Anastasia)
 
-### IIII. Results:
+### III. Results:
 
 **1.** Statistics of allele frequency
 
