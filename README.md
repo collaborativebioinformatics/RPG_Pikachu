@@ -1,4 +1,4 @@
-# Telomere-to-telomere genome for annotating common alleles & abnormally avoided stop-codons
+# Reference Panel Generator for Diverse Sequencing Data Analysis
 
 <img align="right" width="200" height="200" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/RPG_pikachu.jpeg">
 
