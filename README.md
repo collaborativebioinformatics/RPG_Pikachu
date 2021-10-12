@@ -27,6 +27,8 @@ by Anastasia Illarionova
 ## Dependancies
 
 - python3
+- conda
+- snakemake
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - [bcftools](https://samtools.github.io/bcftools/)
 - [gffread](https://github.com/gpertea/gffread)
@@ -51,8 +53,32 @@ by Anastasia Illarionova
 - (Optional) New reference Fasta files for 5 subpopulations
 - ClinVar annotation of common alleles
 
+## Usage
 
-## Sample Workflow (chr22)
+Install evironment
+
+```
+conda env create -f utils.ymal
+```
+Activate evironment
+
+```
+conda activate popchrom
+```
+
+Dry run (See what will happen)
+
+```
+snakemake -np
+```
+
+Use snakemake to run the workfolw
+
+```
+snakemake --cores 10
+```
+
+## Sample detailed Workflow (chr22)
 
 ### I. Data Acquisition and Preprocessing:
 
