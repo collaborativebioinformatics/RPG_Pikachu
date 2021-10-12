@@ -91,7 +91,7 @@ by Anastasia Illarionova
   -  Picking up common variants
 
   ```
-  (#$%$#%$%)
+  By checking the variant's allele frequency in population and the mutation type (non-synonymous/synonymous/nonsense).
   ```
 
   -  Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
