@@ -138,6 +138,7 @@ by Anastasia Illarionova
 
 - Sergey Aganezov et.al, A complete reference genome improves analysis of human genetic variation. bioRxiv 2021.07.12.452063; doi: https://doi.org/10.1101/2021.07.12.452063
 - T2T Consortium: https://sites.google.com/ucsc.edu/t2tworkinggroup/technology?authuser=0
+- Lifting over variants from GRCh38 to T2T-CHM13: https://github.com/mccoy-lab/t2t-variants/tree/main/liftover_vcfs
 
 ## Acknoledgement
 
