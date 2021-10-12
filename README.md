@@ -42,7 +42,7 @@ II. Core tasks:
   -  Input: Old CHM13 reference fasta, VCF file, GFF annotation, Optional (Clinvar)
   -  Output: New reference CHM13 Fasta
 
-(PART2) Parsing common alleles into newly generated CHM13 reference genome
+(PART2) Parsing common alleles into newly generated CHM13 reference genome, and anotating true inframe stop-codons:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
