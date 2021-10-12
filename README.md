@@ -34,7 +34,9 @@ by Anastasia Illarionova
 - [gffread](https://github.com/gpertea/gffread)
 - [GATK](https://gatk.broadinstitute.org)
 
-## Input:
+## Usage
+
+Input:
 
 - vcf files (using CHM13_v1.0 as reference already)
 
@@ -47,13 +49,11 @@ by Anastasia Illarionova
 
   https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz
 
-## Outputs: 
+Outputs: 
 
 - New reference Fasta file (for all samples in 1GP)
 - (Optional) New reference Fasta files for 5 subpopulations
 - ClinVar annotation of common alleles
-
-## Usage
 
 Install evironment
 
