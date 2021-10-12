@@ -23,8 +23,9 @@ by Anastasia Illarionova
 
 <img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version6.png">
 
+## Usage
 
-## Dependancies
+### Dependancies:
 
 - python3
 - conda
@@ -33,8 +34,6 @@ by Anastasia Illarionova
 - [bcftools](https://samtools.github.io/bcftools/)
 - [gffread](https://github.com/gpertea/gffread)
 - [GATK](https://gatk.broadinstitute.org)
-
-## Usage
 
 ### Input:
 
