@@ -44,7 +44,7 @@ II. Core tasks:
 
 (PART2) Parsing common alleles into newly generated CHM13 reference genome, and anotating true inframe stop-codons:
 
-1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
+1. Identifying stop codon sites in CHM13 fasta file 
 
   -  Extract the protein sequences from GFF annotation and FASTA file
 
@@ -58,7 +58,7 @@ II. Core tasks:
   python3 determine.in-frame.stop-codon.py chm13.v1.0.pep.fasta chm13.draft_v1.0.gene_annotation.v4.gff3 | grep "chr22" > chm13.draft_v1.0.chr22.in-frame.stop-codon.bed
   ```
 
-2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce, Tiancheng)
+2. Identifying common variants from Chr22 VCF file 
 
   -  Variant call filtering criteria (SNP, AAF > 5%)
 
@@ -66,7 +66,7 @@ II. Core tasks:
   bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf
   ```
 
-3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
+3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation 
 
   -  Picking up common variants
 
@@ -100,7 +100,7 @@ II. Core tasks:
   and to clasify them into true ones and false ones.
   ```
 
-4. Annotate common variants with ClinVar (Anastasia, Shangzhe)
+4. Annotate common variants with ClinVar 
 
 5. Biological significance of the replacement selection/disease-related candidates. 
 
