@@ -1,4 +1,4 @@
-# Telomere-to-telomere genome for annotating common alleles & abnormally avoided stop-codons
+# Revised Telomere-to-Telomere CHM13 Reference Genome for Diverse Population-Scale Sequencing Data Analysis
 
 <img align="right" width="120" height="200" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/pikachu2.jpeg">
 
