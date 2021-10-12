@@ -38,35 +38,35 @@ II. Core tasks:
 
 1. Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
-  - - Extract the coordinations of stop codons in CHM13 annotation file
+  -  Extract the protein sequences from GFF annotation and FASTA file
 
   ```
-  grep "stop_codon" chm13.draft_v1.1.gene_annotation.v4.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3
+  gffread -g chm13.draft_v1.0.fasta chm13.draft_v1.0.gene_annotation.v4.gff3 -y chm13.v1.0.pep.fasta
   ```
 
-  - - Convert the GFF format to BED format
+  -  Costom script to extract the positions of in-frame stop codons (Only for chr22)
 
   ```
-  gffread --bed chm13.draft_v1.1.gene_annotation.v4.stop_codon.gff3 > chm13.draft_v1.1.gene_annotation.v4.stop_codon.bed
+  python3 determine.in-frame.stop-codon.py chm13.v1.0.pep.fasta chm13.draft_v1.0.gene_annotation.v4.gff3 | grep "chr22" > chm13.draft_v1.0.chr22.in-frame.stop-codon.bed
   ```
 
 2. Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce, Tiancheng)
 
-  - - Variant call filtering criteria (SNP, AAF > 5%)
+  -  Variant call filtering criteria (SNP, AAF > 5%)
 
   ```
-  bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf &
+  bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf
   ```
 
 3. Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
 
-  - - Picking up common variants
+  -  Picking up common variants
 
   ```
   (#$%$#%$%)
   ```
 
-  - - Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
+  -  Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
 
   ```
   To download paired RNASeq.fastq and RiboSeq.fastq
