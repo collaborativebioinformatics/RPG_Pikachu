@@ -21,7 +21,7 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 
 by Anastasia Illarionova
 
-<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version5.png">
+<img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version6.png">
 
 
 ## Dependancies
