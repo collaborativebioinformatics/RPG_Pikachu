@@ -162,7 +162,7 @@ snakemake --cores 10
 
 ## IV. Appendix
 
-##References
+## References
 
 - Sergey Aganezov et.al, A complete reference genome improves analysis of human genetic variation. bioRxiv 2021.07.12.452063; doi: https://doi.org/10.1101/2021.07.12.452063
 - T2T Consortium: https://sites.google.com/ucsc.edu/t2tworkinggroup/technology?authuser=0
