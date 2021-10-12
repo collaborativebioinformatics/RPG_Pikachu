@@ -36,7 +36,7 @@ by Anastasia Illarionova
 
 ## Usage
 
-Input:
+### Input:
 
 - vcf files (using CHM13_v1.0 as reference already)
 
@@ -49,30 +49,32 @@ Input:
 
   https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz
 
-Outputs: 
+### Outputs: 
 
 - New reference Fasta file (for all samples in 1GP)
 - (Optional) New reference Fasta files for 5 subpopulations
 - ClinVar annotation of common alleles
 
-Install evironment
+### Set up:
+
+- Install evironment
 
 ```
 conda env create -f utils.ymal
 ```
-Activate evironment
+- Activate evironment
 
 ```
 conda activate popchrom
 ```
 
-Dry run (See what will happen)
+- Dry run (See what will happen)
 
 ```
 snakemake -np
 ```
 
-Use snakemake to run the workfolw
+- Use snakemake to run the workfolw
 
 ```
 snakemake --cores 10
