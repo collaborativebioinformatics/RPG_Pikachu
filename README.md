@@ -14,7 +14,7 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 
 ## Goal 
 
-Design a portable pippeline which performs the following steps (the tool can be applied to any genomes in fasta format and any VCF files)
+To design a portable pippeline which performs the following steps (the tool can be applied to any genomes in fasta format and any VCF files)
 - Introduce common variants into CHM13 reference genome.
 - Screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
 - Propose a more representative reference genome by 1000 Genomes Project 
@@ -123,7 +123,7 @@ snakemake --cores 10 --use-conda
   cat {input.reference} | vcf-consensus {input.vcf} > {input.gff}
   ```
 
-**3.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce, Chunhsuan)
+**3.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce, ChunHsuan)
 
   -  Extract the protein sequences from GFF annotation and FASTA file
 
