@@ -175,29 +175,11 @@ Likely benign       | 8e-3
 Likely pathogenic   | 8e-5
 Pathogenic          | 3e-4
 
-**4. AF analysis on subpopluation**
+### IV. Future Plans:
 
-<figure>
-<img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AFR_af.jpeg">
-<figcaption align = "center">ARF</figcaption>
-</figure>
-<figure>
-<img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AMR_af.jpeg">
-<figcaption align = "center">AMR</figcaption>
-</figure>
-<figure>
-<img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EAS_af.jpeg">
-<figcaption align = "center">EAS</figcaption>
-</figure>
-<figure>
-<img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EUR_af.jpeg">
-<figcaption align = "center">EUR</figcaption>
-</figure>
-<figure>
-<img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/SAS_af.jpeg">
-<figcaption align = "center">SAS</figcaption>
-</figure>
-
+- Complete high-quality reference genome is crucial for improved read mapping and variant calling in resequencing data analysis. Reference panel generator (RPG) pipeline incorporate common allele information at the rare sites of high-quality genome sequences and fixing rare in-frame stop-codons. Such approach would facilitate sequencing analysis of diverse set of populations.
+- However, incorporating common alleles might leads to unknown genomic changes, such as introduction of new start codons or unknown impacts on gene structure. Therefore, revising gene annotation files are also anticipated.
+- Extensive benchmarking will be required in order to validate the utility of the newly generated reference panels. 
 
 ## References
 
