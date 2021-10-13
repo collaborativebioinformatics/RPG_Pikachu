@@ -170,9 +170,11 @@ snakemake --cores 10 --use-conda
 
 Fig.2 - AF analysis on subpopluation
 
+
 **2. Postions of in-frame stop codons**
 
 There are 3,166 in-frame stop codons for 603 transcripts of 334 genes. 
+
 
 
 
