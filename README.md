@@ -32,6 +32,30 @@ Credits: Anastasia Illarionova
 
 - conda (python3)
 - snakemake
+- [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
+- [bcftools](https://samtools.github.io/bcftools/)
+- [gffread](https://github.com/gpertea/gffread)
+- [GATK](https://gatk.broadinstitute.org)
+
+### Input:
+
+- vcf files (using CHM13_v1.0 as reference already)
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
+- CHM13_v1.0 Fasta file
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/chm13.draft_v1.0.fasta.gz
+
+- CHM13_v1.0 GFF file
+
+  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz
+
+### Outputs: 
+
+- Positions of in-frame stop codons in CHRM13 reference sequence
+- New reference Fasta file (for all samples in 1GP)
+- (Optional) New reference Fasta files for 5 subpopulations
+- ClinVar annotation of common alleles
 
 ### Set up:
 
@@ -143,13 +167,21 @@ snakemake --cores 10 --use-conda
 
 ### III. Results:
 
-**1.** Statistics of allele frequency
+**1.** Statistical visualization 
+
+- Distribution of common allele frequency
+
+<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/common_af.jpeg">
+
+- Distribution of ClinVar-annotated common allele frequency
+
+<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/1kgp.chr22.filtered_5_clinvar_gatk_bisnp_af.jpeg">
 
 **2.** Postions of in-frame stop codons
 
 **3.** Biologically annotated variants (CHM13 based).
 
-**4.** Statistical visualization
+
 
 ## References
 
