@@ -9,3 +9,4 @@ dependencies:
   - perl-vcftools-vcf
   - bcftools
   - gatk4
+  - biopython

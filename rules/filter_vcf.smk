@@ -12,7 +12,7 @@ rule filter_vcf:
         "../envs/utils.ymal"
     shell:
         """
-        bcftools view -i 'INFO/AF > 0.05' {input.vcf} > {input.vcf}_filteredAF.vcf
+        bcftools view -i 'INFO/{config[af_flag]} > 0.05' {input.vcf} > {input.vcf}_filteredAF.vcf
         bcftools view --max-alleles 2 --exclude-types indels {input.vcf}_filteredAF.vcf > {output}
         rm {input.vcf}_filteredAF.vcf
         """

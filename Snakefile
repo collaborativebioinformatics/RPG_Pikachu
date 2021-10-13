@@ -26,34 +26,15 @@ chr_id= ["chr" + str(i) for i in chr_list]
 
 rule all:
     input:
-        "all_chr_fixed_header.vcf",
         expand("input_vcf/{chromosome}.vcf", chromosome = chr_id),
         expand("filtered_vcf/{chromosome}_filtered.vcf", chromosome = chr_id),
         "filtered_vcf/common_annotated.vcf.gz",
         "output/CHM13_new.fasta",
         "output/chm13.new.in-frame.stop-codon.bed"
 
-rule fix_header:
-    input:
-        vcf = config["vcf"]
-    output:
-        "all_chr_fixed_header.vcf"
-    conda:
-        "envs/utils.ymal"
-    threads: 1
-    resources:
-        nodes = 1
-    shell:
-        """
-        gatk FixVcfHeader \
-          I={input} \
-          O={output}
-        """
-
-
 rule split_by_chr:
     input:
-        vcf = "all_chr_fixed_header.vcf"
+        vcf = config["vcf"]
     output:
         "input_vcf/{chromosome}.vcf"
     params:

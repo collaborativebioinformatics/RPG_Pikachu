@@ -13,7 +13,7 @@ rule get_inframe_stopCodon:
         "output/chm13.new.in-frame.stop-codon.bed"
     shell:
         """
-        gffread -g {input.ref} {input.gff} -y > new.pep.fasta
+        gffread -g {input.ref} {input.gff} -y new.pep.fasta
         python3 determine.in-frame.stop-codon.py new.pep.fasta {input.gff} > {output}
         rm new.pep.fasta
         """
