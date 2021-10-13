@@ -123,7 +123,7 @@ snakemake --cores 10 --use-conda
   cat {input.reference} | vcf-consensus {input.vcf} > {input.gff}
   ```
 
-**3.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
+**3.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce, Chunhsuan)
 
   -  Extract the protein sequences from GFF annotation and FASTA file
 
