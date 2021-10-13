@@ -26,7 +26,7 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 Credits: Anastasia Illarionova
 ## Usage
 
-### Dependancies:
+### Dependencies:
 
 - python3
 - conda
