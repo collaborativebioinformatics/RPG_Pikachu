@@ -189,6 +189,8 @@ Likely benign       | 8e-3
 Likely pathogenic   | 8e-5
 Pathogenic          | 3e-4
 
+<br>
+
 ### IV. Future Plans:
 
 - Complete high-quality reference genome is crucial for improved read mapping and variant calling in resequencing data analysis. Reference panel generator (RPG) pipeline incorporate common allele information at the rare sites of high-quality genome sequences and fixing rare in-frame stop-codons. Such approach would facilitate sequencing analysis of diverse set of populations.
