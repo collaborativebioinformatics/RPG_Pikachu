@@ -13,8 +13,10 @@
 After two decades of refinements, the human reference genome (GRCh38) has become more accurate and mostly complete. However, there are still hundreds of unresolved gaps persist, and no single chromosome has been finished from end to end because of the existence of highly repeated sequences (called transposable elements). Foutunatedly, by using the high-coverage & ultra-long-read technologies, several scientific groups have presented a new human genome assembly that surpasses the continuity of GRCh38, along with a gapless, telomere-to-telomere assembly of a human chromosome, which is called CHM13 reference genome.
 
 ## Goal 
-- To identify rare variants in CHM13 and recorrecting some of them as common variants. By Checking the fasta file directly.
-- To screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
+
+Design a portable pippeline which performs the following steps (the tool can be applied to any genomes in fasta format and any VCF files)
+- Introduce common variants into CHM13 reference genome.
+- Screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
 - Propose a more representative reference genome by 1000 Genomes Project 
 
 ## Flowchart
@@ -28,8 +30,7 @@ Credits: Anastasia Illarionova
 
 ### Dependencies:
 
-- python3
-- conda
+- conda (python3)
 - snakemake
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/)
 - [bcftools](https://samtools.github.io/bcftools/)
@@ -58,15 +59,21 @@ Credits: Anastasia Illarionova
 
 ### Set up:
 
-- Install evironment
+- Install snakemake
 
 ```
-conda env create -f utils.ymal
+conda install -n base -c conda-forge mamba
+mamba create -c conda-forge -c bioconda -n snakemake snakemake
 ```
-- Activate evironment
+- Clone the Git repo
 
 ```
-conda activate popchrom
+git clone https://github.com/collaborativebioinformatics/RPG_Pikachu.git
+```
+- Go inside the RPG_Pikachu
+
+```
+cd RPG_Pikachu
 ```
 
 - Dry run (See what will happen)
@@ -78,51 +85,58 @@ snakemake -np
 - Use snakemake to run the workfolw
 
 ```
-snakemake --cores 10
+snakemake --cores 10 --use-conda
 ```
 
-## Sample detailed Workflow (chr22)
+## Detailed Workflow and demonstration of the core steps
 
 ### I. Data Acquisition and Preprocessing:
 
-1. Downloading the raw CHM13 fasta file.
+1. Download [CHM13 v1.0 draft fasta file](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/chm13.draft_v1.0.fasta.gz).
 
-2. Downloading the raw population based VCF (CHM13 fasta based).
+2. Download [population based VCF](https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project) (CHM13 v1.0 draft). Run GATK FixVcfHeader before launching the pipeline!
 
-3. Downloading the raw Annotation file (gff3).
+3. Download [gene annotation file](https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz) (gff3, for CHM13 v1.0 draft).
+
+4. Modify config.yaml file
+  ```
+  ref_genome: data/hm13.draft_v1.0.fasta                  # Reference genome 
+  gff: data/chm13.draft_v1.0.gene_annotation.v4.gff3      # Reference genome annotation
+  vcf: 1KG_CHM13.vcf                                      # Variant call dataset with allele frequencies 
+  vcf_clinvar: clinvar_liftover_tochm13_v0draft.vcf       # Variant call dataset for additional annotation of filtered variants
+  af_flag: "AF"                                           # Allele frequency flag in the INFO field to use for the variant filtering
+  ```
 
 ### II. Core tasks:
 
-**1.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
+**1.** Identification of common variants from VCF file
+
+  -  Variant call filtering criteria (biallelic SNP, AAF > 5%, custom AF flag)
+
+  ```
+  bcftools view --max-alleles 2 --exclude-types indels -i 'INFO/AF > 0.05' {input.vcf} > {input.vcf}_filtered.vcf
+  ```
+
+**2.** Insertion of common variants into the Reference genome
+
+  ```
+  cat {input.reference} | vcf-consensus {input.vcf} > {input.gff}
+  ```
+
+**3.** Identifying stop codon sites in CHM13 fasta file (Shangzhe, Muhamad, Bryce)
 
   -  Extract the protein sequences from GFF annotation and FASTA file
 
   ```
-  gffread -g chm13.draft_v1.0.fasta chm13.draft_v1.0.gene_annotation.v4.gff3 -y chm13.v1.0.pep.fasta
+  gffread -g {input.reference} {input.gff} -y new.pep.fasta
   ```
 
-  -  Costom script to extract the positions of in-frame stop codons (Only for chr22)
+  -  Custom script to extract the positions of in-frame stop codons
 
   ```
-  python3 determine.in-frame.stop-codon.py chm13.v1.0.pep.fasta chm13.draft_v1.0.gene_annotation.v4.gff3 | grep "chr22" > chm13.draft_v1.0.chr22.in-frame.stop-codon.bed
+  python3 determine.in-frame.stop-codon.py new.pep.fasta {input.gff} > {output_stop-codons.bed}
   ```
-
-**2.** Identifying common variants from Chr22 VCF file (Aditi, Muhamad, Bryce, Tiancheng)
-
-  -  Variant call filtering criteria (SNP, AAF > 5%)
-
-  ```
-  bcftools view -i "INFO/AF > 0.05" 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.vcf > 1kgp.chr22.recalibrated.snp_indel.pass.withafinfo.filtered_5%.vcf
-  ```
-
-**3.** Checking for overlaps between common variants from chr22 VCF file with stop codon sites identified from CHM13 fasta. Also, it will be checked if there are inconsistent nonsense variants or ORFs between CHM13 & hg38, which requirs RiboSeq validation (Anastasia, ChunHsuan)
-
-  -  Picking up common variants
-
-  ```
-  By checking the variant's allele frequency in population and the mutation type (non-synonymous/synonymous/nonsense).
-  ```
-
+  
   -  Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
 
   ```
@@ -164,8 +178,6 @@ snakemake --cores 10
 <img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/1kgp.chr22.filtered_5_clinvar_gatk_bisnp_af.jpeg">
 
 **2.** Postions of in-frame stop codons
-
-    https://github.com/collaborativebioinformatics/popchrom/blob/main/data/chm13.draft_v1.0.chr22.in-frame.stop-codon.bed
 
 **3.** Biologically annotated variants (CHM13 based).
 
