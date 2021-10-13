@@ -151,12 +151,24 @@ snakemake --cores 10 --use-conda
 
 **1. Statistical visualization**
 
-6,728,753 common alleles were identified, 17 of which are overlapping with in-frame stop codons. 
+ - 6,728,753 common alleles were identified, 17 of which are overlapping with in-frame stop codons. 
 
 <figure>
 <img width="500" height= "500" alt="image" src="https://user-images.githubusercontent.com/19209239/137164957-a034549f-c778-461f-b420-97705780eeb8.jpeg">
 <figcaption align = "center">Fig.1 - Distribution of ClinVar-annotated common allele frequency</figcaption>
 </figure><br><br>
+
+ - AF analysis on subpopluation
+
+<p float="left">
+  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AFR_af.jpeg">
+  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AMR_af.jpeg">
+  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EAS_af.jpeg">
+  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EUR_af.jpeg">
+  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/SAS_af.jpeg">
+</p>
+
+Fig.2 - AF analysis on subpopluation
 
 **2. Postions of in-frame stop codons**
 
@@ -174,15 +186,6 @@ Benign              | 0.6
 Likely benign       | 8e-3
 Likely pathogenic   | 8e-5
 Pathogenic          | 3e-4
-
-**4. AF analysis on subpopluation.**
-<p float="left">
-  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AFR_af.jpeg">
-  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AMR_af.jpeg">
-  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EAS_af.jpeg">
-  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EUR_af.jpeg">
-  <img width="150" height= "150" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/SAS_af.jpeg">
-</p>
 
 ### IV. Future Plans:
 
