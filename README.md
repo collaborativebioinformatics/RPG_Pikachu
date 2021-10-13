@@ -168,21 +168,21 @@ snakemake --cores 10 --use-conda
 
 ### III. Results:
 
-**1.** Statistical visualization 
+**1. Statistical visualization **
 
 6,728,753 common alleles were identified, 17 of which are overlapping with in-frame stop codons. 
+
 <figure>
 <img width="500" height= "500" alt="image" src="https://user-images.githubusercontent.com/19209239/137164957-a034549f-c778-461f-b420-97705780eeb8.jpeg">
-<figcaption align = "center"><b>Fig.1 - Distribution of ClinVar-annotated common allele frequency</b></figcaption>
-</figure>
+<figcaption align = "center">Fig.1 - Distribution of ClinVar-annotated common allele frequency</figcaption>
+</figure><br><br>
 
-**2.** Postions of in-frame stop codons
+**2. Postions of in-frame stop codons **
 
 There are 3,166 in-frame stop codons for 603 transcripts and 334 genes. 
 
 
-**3.** Biologically annotated variants (CHM13 based).
-
+**3. Biologically annotated variants (CHM13 based). **
 
 
 ## References
@@ -192,7 +192,7 @@ There are 3,166 in-frame stop codons for 603 transcripts and 334 genes.
 - Lifting over variants from GRCh38 to T2T-CHM13: https://github.com/mccoy-lab/t2t-variants/tree/main/liftover_vcfs
 - Ribosome-Profiling: https://github.com/FDA/Ribosome-Profiling
 
-## Acknoledgement
+## Acknowledgement
 
 - Fritz J. Sedlazeck
 - Ben Busby
