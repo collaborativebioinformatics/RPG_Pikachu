@@ -14,14 +14,12 @@ After two decades of refinements, the human reference genome (GRCh38) has become
 
 ## Goal 
 
-To design a portable pippeline which performs the following steps (the tool can be applied to any genomes in fasta format and any VCF files)
-- Introduce common variants into CHM13 reference genome.
-- Screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
-- Propose a more representative reference genome by 1000 Genomes Project 
+Designing a portable pippeline which performs the following steps (the tool can be applied to any genomes in fasta format and any VCF files)
+- To introduce common variants into CHM13 reference genome.
+- To propose a more representative reference genome by 1000 Genomes Project.
+- To screen out in-frame stop codons sites that disagree with Ribo-seq analysis for validting the annotation.
 
 ## Flowchart
-
-
 
 <img width="1200" alt="flowchart" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/others/flowchart_version6.png">
 
