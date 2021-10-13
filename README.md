@@ -126,13 +126,13 @@ snakemake --cores 10 --use-conda
   -  Extract the protein sequences from GFF annotation and FASTA file
 
   ```
-  gffread -g {input.reference} {input.gff} -y new.pep.fasta
+  gffread -g {input.reference} {input.gff} -y pep.fasta
   ```
 
   -  Custom script to extract the positions of in-frame stop codons
 
   ```
-  python3 determine.in-frame.stop-codon.py new.pep.fasta {input.gff} > {output_stop-codons.bed}
+  python3 determine.in-frame.stop-codon.py pep.fasta {input.gff} > {output_stop-codons.bed}
   ```
   
   -  Riboseq-validation (for the ORF & inframe-stop-codon sites where variants located)
@@ -165,20 +165,12 @@ snakemake --cores 10 --use-conda
   Rscript ./RiboSeq_pipeline.R
   (Details were described in https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/others/RiboSeq_validation/RiboSeq_pipeline.R)
   ```
-  
-**4.** Annotate common variants with ClinVar (Anastasia)
 
 ### III. Results:
 
 **1.** Statistical visualization 
 
-<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/1kgp.chr22.filtered_5_clinvar_gatk_bisnp_af.jpeg">
-
-**Fig 1: Distribution of common allele frequency (chr22 only)** 
-
-<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/common_af.jpeg">
-
-**Fig 2: Distribution of ClinVar-annotated common allele frequency** 
+**Fig 1: Distribution of ClinVar-annotated common allele frequency** 
 
 **2.** Postions of in-frame stop codons
 
