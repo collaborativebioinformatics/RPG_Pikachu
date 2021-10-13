@@ -175,6 +175,15 @@ Likely benign       | 8e-3
 Likely pathogenic   | 8e-5
 Pathogenic          | 3e-4
 
+**4. AF analysis on subpopluation.**
+<p float="left">
+  <img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AFR_af.jpeg">
+  <img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AMR_af.jpeg">
+  <img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EAS_af.jpeg">
+  <img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/EUR_af.jpeg">
+  <img width="200" height= "200" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/SAS_af.jpeg">
+</p>
+
 ### IV. Future Plans:
 
 - Complete high-quality reference genome is crucial for improved read mapping and variant calling in resequencing data analysis. Reference panel generator (RPG) pipeline incorporate common allele information at the rare sites of high-quality genome sequences and fixing rare in-frame stop-codons. Such approach would facilitate sequencing analysis of diverse set of populations.
