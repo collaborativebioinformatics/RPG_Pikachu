@@ -170,14 +170,15 @@ snakemake --cores 10 --use-conda
 
 **1.** Statistical visualization 
 
-6728753 common alleles were identified, 17 of which are overlapping with in-frame stop codons
+6,728,753 common alleles were identified, 17 of which are overlapping with in-frame stop codons
 
+<img width="600" height= "600" alt="image" src="https://github.com/collaborativebioinformatics/popchrom/blob/main/images/image.png">
 
 **Fig 1: Distribution of ClinVar-annotated common allele frequency** 
 
 **2.** Postions of in-frame stop codons
 
-There are 3166 in-frame stop codons for 603 transcripts and 334 genes
+There are 3,166 in-frame stop codons for 603 transcripts and 334 genes
 
 
 **3.** Biologically annotated variants (CHM13 based).
