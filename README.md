@@ -160,7 +160,11 @@ snakemake --cores 10 --use-conda
   To validate our targeted variant sites by the peak calling results, 
   and to clasify them into true ones and false ones.
   ```
-
+  
+  ```
+  Details were described in https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/others/RiboSeq_validation/RiboSeq_pipeline.R
+  ```
+  
 **4.** Annotate common variants with ClinVar (Anastasia)
 
 ### III. Results:
