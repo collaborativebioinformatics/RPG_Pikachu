@@ -169,13 +169,13 @@ snakemake --cores 10 --use-conda
 
 **1.** Statistical visualization 
 
-- Distribution of common allele frequency
+<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/1kgp.chr22.filtered_5_clinvar_gatk_bisnp_af.jpeg">
+
+**Fig 1: Distribution of common allele frequency (chr22 only)** 
 
 <img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/common_af.jpeg">
 
-- Distribution of ClinVar-annotated common allele frequency
-
-<img width="500" hight="500" alt="common_af" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/1kgp.chr22.filtered_5_clinvar_gatk_bisnp_af.jpeg">
+**Fig 2: Distribution of ClinVar-annotated common allele frequency** 
 
 **2.** Postions of in-frame stop codons
 
