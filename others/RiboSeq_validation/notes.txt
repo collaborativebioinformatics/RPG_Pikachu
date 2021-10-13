@@ -1,0 +1,20 @@
+Data downloaded from paper: Ribosome profiling of HEK293T cells overexpressing codon optimized coagulation factor IX [version 1; peer review: 3 approved with reservations]
+
+Introduction: The ribosome profiling data are composed of Ribo-seq (mRNA sequencing data from ribosome protected fragments) and RNA-seq data (total RNA sequencing). 
+
+ProjectID:
+https://www.ncbi.nlm.nih.gov/bioproject/591214
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37744
+
+(Ribosome profiling of HEK-293T cells stably expressing wild-type and codon-optimized coagulation factor IX.)
+
+RNASeq data:
+https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR10513635
+
+RiboSeq data:
+https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR10513636
+
+
+
+PS: 
+1. SRA toolkit: https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc
