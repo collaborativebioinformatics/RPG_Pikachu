@@ -35,19 +35,6 @@ Credits: Anastasia Illarionova
 - [gffread](https://github.com/gpertea/gffread)
 - [GATK](https://gatk.broadinstitute.org)
 
-### Input:
-
-- vcf files (using CHM13_v1.0 as reference already)
-
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/index.html?prefix=T2T/CHM13/assemblies/variants/1000_Genomes_Project/by_chr/
-- CHM13_v1.0 Fasta file
-
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/chm13.draft_v1.0.fasta.gz
-
-- CHM13_v1.0 GFF file
-
-  https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/annotation/chm13.draft_v1.0.gene_annotation.v4.gff3.gz
-
 ### Outputs: 
 
 - Positions of in-frame stop codons in CHRM13 reference sequence
@@ -173,10 +160,20 @@ snakemake --cores 10 --use-conda
 
 **2. Postions of in-frame stop codons**
 
-There are 3,166 in-frame stop codons for 603 transcripts and 334 genes. 
+There are 3,166 in-frame stop codons for 603 transcripts of 334 genes. 
+
 
 
 **3. Biologically annotated variants (CHM13 based).**
+
+~0.7% of the final dataset of common variants were annotated with respective hits in ClinVar database (liftover hg38 -> CHM13 v1.0)
+
+ClinVar annotation  | Percentage of common variants
+------------------- | -----------------------------
+Benign              | 0.6
+Likely benign       | 8e-3
+Likely pathogenic   | 8e-5
+Pathogenic          | 3e-4
 
 
 ## References
