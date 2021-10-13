@@ -51,6 +51,7 @@ Credits: Anastasia Illarionova
 
 ### Outputs: 
 
+- Positions of in-frame stop codons in CHRM13 reference sequence
 - New reference Fasta file (for all samples in 1GP)
 - (Optional) New reference Fasta files for 5 subpopulations
 - ClinVar annotation of common alleles
