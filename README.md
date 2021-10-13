@@ -162,7 +162,8 @@ snakemake --cores 10 --use-conda
   ```
   
   ```
-  Details were described in https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/others/RiboSeq_validation/RiboSeq_pipeline.R
+  Rscript ./RiboSeq_pipeline.R
+  (Details were described in https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/others/RiboSeq_validation/RiboSeq_pipeline.R)
   ```
   
 **4.** Annotate common variants with ClinVar (Anastasia)
