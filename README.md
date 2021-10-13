@@ -175,6 +175,18 @@ Likely benign       | 8e-3
 Likely pathogenic   | 8e-5
 Pathogenic          | 3e-4
 
+**4. AF analysis on subpopluation**
+
+<figure>
+<img width="500" height= "500" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AFR_af.jpeg">
+<figcaption align = "center">ARF</figcaption>
+</figure>
+<figure>
+<img width="500" height= "500" alt="image" src="https://github.com/collaborativebioinformatics/RPG_Pikachu/blob/main/images/AMR_af.jpeg">
+<figcaption align = "center">AMR</figcaption>
+</figure>
+
+
 
 ## References
 
